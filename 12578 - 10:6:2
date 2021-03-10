@@ -1,0 +1,83 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+
+    static int testCases;
+
+    static double r=(double)((double)1/(double)5),w=(double)((double)6/(double)10);
+    
+    static Scanner scanner =new Scanner();
+    
+    public static void main(String[] args) throws IOException {
+        
+        testCases=scanner.nextInt();
+        
+        for(int t=0;t<testCases;t++){
+            
+            double n=scanner.nextDouble();
+            
+          //  System.out.println("r: "+r);
+            
+            double circle=Math.PI*Math.pow(r*n, 2);
+            double rectangle=w*Math.pow(n, 2)-circle;
+            
+            System.out.printf("%.2f %.2f\n",circle,rectangle);
+            
+        }
+        
+    }
+    
+    static class Scanner{
+    
+    BufferedReader in;
+
+   StringTokenizer st;    
+
+        public Scanner() {
+        
+            in=new BufferedReader( new InputStreamReader( System.in ) );
+            
+        }
+        
+    String next() throws IOException{
+        
+        while( st==null || !st.hasMoreElements() ){
+            
+            st=new StringTokenizer(in.readLine());
+            
+        }
+        
+        return st.nextToken();
+        
+    }
+   
+    int nextInt() throws IOException{
+        
+        return Integer.parseInt( next() );
+        
+    }
+   
+    long nextLong() throws IOException{
+        
+        return Long.parseLong( next() );
+        
+    }
+    
+    double nextDouble() throws IOException{
+        
+        return Double.parseDouble( next() );
+        
+    }
+    
+}
+    
+}
+/*
+
+1
+10
+
+*/
