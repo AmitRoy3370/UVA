@@ -1,0 +1,79 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    
+    static Scanner scanner=new Scanner();
+    
+    static int n,testCases;
+    
+    public static void main(String[] args) throws IOException {
+        
+        testCases=scanner.nextInt();
+        
+        for(int t=1;t<=testCases;t++){
+            
+            n=scanner.nextInt();
+            
+            long a[]=new long[n];
+            
+            for(int i=0;i<n;i++){
+                
+                a[i]=scanner.nextLong();
+                
+            }
+            
+            System.out.println("Case "+t+": "+a[n/2] );
+            
+        }
+        
+    }
+    
+    static class Scanner{
+    
+    BufferedReader in;
+
+   StringTokenizer st;    
+
+        public Scanner() {
+        
+            in=new BufferedReader( new InputStreamReader( System.in ) );
+            
+        }
+        
+    String next() throws IOException{
+        
+        while( st==null || !st.hasMoreElements() ){
+            
+            st=new StringTokenizer(in.readLine());
+            
+        }
+        
+        return st.nextToken();
+        
+    }
+   
+    int nextInt() throws IOException{
+        
+        return Integer.parseInt( next() );
+        
+    }
+   
+    long nextLong() throws IOException{
+        
+        return Long.parseLong( next() );
+        
+    }
+    
+}
+    
+}
+/*
+
+2
+5 19 17 16 14 12
+5 12 14 16 17 18
+
+*/
