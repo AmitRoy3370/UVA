@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class E_Parity{
+
+static Scanner in=new Scanner(System.in);
+
+static int Parity(int N){
+	int cnt = 0;
+	while( N>=1 ){
+		cnt += N%2;
+		N /= 2;
+	}
+	return cnt;
+}
+
+static String toBinary(int N){
+	String str = "";
+	while( N>=1 ){
+		if( N%2>=1 )
+			str = "1" + str;
+		else
+			str = "0" + str;
+		N /= 2;
+	}
+	return str;
+}
+
+public static void main(String []amit){
+
+  	while( true ){
+		int N;
+		
+		N=in.nextInt();
+		
+		if( N == 0 )
+			break;
+		String bin = toBinary(N);
+		int P = Parity(N);
+		 System.out.println("The parity of " + bin + " is " + P + " (mod 2).");
+	}
+
+}
+
+}
